@@ -13,9 +13,9 @@ contract CustomerPoints {
   }
 
   event customerData(
-    string name;
-    string country;
-    uint points;
+    string name,
+    string country,
+    uint points
 
   );
   
@@ -36,7 +36,7 @@ contract CustomerPoints {
     totalPoints = totalPoints-_amount;
     numCustomers++;
     customers[numCustomers] = Customer(numCustomers, _name, _country, _amount);
-    customerData(_name,_amount,_country);
+    emit customerData(_name,_country,_amount);
     
   }
   
